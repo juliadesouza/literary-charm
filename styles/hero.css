@@ -1,8 +1,11 @@
 #hero {
+  height: 59.25rem;
+  position: relative;
+
   & header {
     display: flex;
     justify-content: space-between;
-    margin: 3.5rem 10rem 10.25rem;
+    padding: 3.5rem 10rem 10.25rem;
 
     img {
       width: 14.375rem;
@@ -44,5 +47,41 @@
         clip-path: circle(100%);
       }
     }
+  }
+
+  & #title {
+    margin-inline: auto;
+    max-width: 41rem;
+
+    & > p {
+      margin-top: 2rem;
+    }
+
+    animation: fadeIn 4s ease-in;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/images/hero-background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: fadeIn 4s ease-in;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

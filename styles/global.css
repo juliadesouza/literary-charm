@@ -1,4 +1,6 @@
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -38,4 +40,16 @@
 
 html {
   background-color: var(--shape-background);
+}
+
+h1 {
+  font: var(--title-lg);
+  color: var(--text-title);
+  text-align: center;
+}
+
+p {
+  font: var(--body-lg);
+  color: var(--text-body);
+  text-align: center;
 }
