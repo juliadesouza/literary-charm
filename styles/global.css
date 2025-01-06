@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root {
   --pink-light: #c59dd2;
   --pink-base: #9547a5;
@@ -17,16 +22,20 @@
   --text-label: #bac6c9;
 
   --ff-base: "Raleway", serif;
-  --title-lg: 700 3rem / auto var(--ff-base);
-  --title-md: 700 2.5rem / auto var(--ff-base);
-  --title-sm: 700 2rem / auto var(--ff-base);
-  --title-xs: 700 1rem / auto var(--ff-base);
+  --title-lg: 700 3rem var(--ff-base);
+  --title-md: 700 2.5rem var(--ff-base);
+  --title-sm: 700 2rem var(--ff-base);
+  --title-xs: 700 1rem var(--ff-base);
   --subtitle: 500 2rem/2 var(--ff-base);
   --body-lg: 400 1.25rem/1.4 var(--ff-base);
   --body-md: 400 1rem/1.4 var(--ff-base);
   --body-sm: 400 0.875rem/1.4 var(--ff-base);
   --body-xs: 400 0.75rem/1.4 var(--ff-base);
-  --button: 700 0.875rem / auto var(--ff-base);
-  --link: 500 0.875rem / auto var(--ff-base);
-  --tag: 700 0.625rem / auto var(--ff-base);
+  --button: 700 0.875rem var(--ff-base);
+  --link: 500 0.875rem var(--ff-base);
+  --tag: 700 0.625rem var(--ff-base);
+}
+
+html {
+  background-color: var(--shape-background);
 }

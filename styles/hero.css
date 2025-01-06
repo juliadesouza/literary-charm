@@ -1,0 +1,48 @@
+#hero {
+  & header {
+    display: flex;
+    justify-content: space-between;
+    margin: 3.5rem 10rem 10.25rem;
+
+    img {
+      width: 14.375rem;
+      height: 3.625rem;
+    }
+
+    & button {
+      all: unset;
+
+      height: 2.5rem;
+      background-color: var(--pink-dark);
+      padding-inline: 1.25rem;
+      border-radius: 0.5rem;
+      font: var(--button);
+      color: var(--text-title);
+      cursor: pointer;
+      position: relative;
+
+      & span {
+        position: relative;
+        z-index: 1;
+      }
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        background-color: var(--pink-base);
+        clip-path: circle(0%);
+        transition: clip-path 0.5s;
+      }
+
+      &:hover::before {
+        clip-path: circle(100%);
+      }
+    }
+  }
+}
