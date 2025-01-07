@@ -1,87 +1,185 @@
 #hero {
-  height: 59.25rem;
-  position: relative;
+  #main {
+    position: relative;
+    height: 59.25rem;
 
-  & header {
-    display: flex;
-    justify-content: space-between;
-    padding: 3.5rem 10rem 10.25rem;
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 3.5rem 10rem 10.25rem;
 
-    img {
-      width: 14.375rem;
-      height: 3.625rem;
-    }
+      img {
+        width: 14.375rem;
+        height: 3.625rem;
+      }
 
-    & button {
-      all: unset;
+      button {
+        all: unset;
 
-      height: 2.5rem;
-      background-color: var(--pink-dark);
-      padding-inline: 1.25rem;
-      border-radius: 0.5rem;
-      font: var(--button);
-      color: var(--text-title);
-      cursor: pointer;
-      position: relative;
-
-      & span {
+        height: 2.5rem;
+        background-color: var(--pink-dark);
+        padding-inline: 1.25rem;
+        border-radius: 0.5rem;
+        font: var(--button);
+        color: var(--text-title);
+        cursor: pointer;
         position: relative;
-        z-index: 1;
+
+        & span {
+          position: relative;
+          z-index: 1;
+        }
+
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          border-radius: inherit;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+          background-color: var(--pink-base);
+          clip-path: circle(0%);
+          transition: clip-path 0.5s;
+        }
+
+        &:hover::before {
+          clip-path: circle(100%);
+        }
+      }
+    }
+
+    & #title {
+      margin-inline: auto;
+      max-width: 41rem;
+
+      h1 {
+        opacity: 0;
+        animation: fadeIn 2s ease-in both;
       }
 
-      &::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        border-radius: inherit;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
-        background-color: var(--pink-base);
-        clip-path: circle(0%);
-        transition: clip-path 0.5s;
+      & p {
+        opacity: 0;
+        margin-top: 2rem;
+        animation: 0.25s fadeIn 2s ease-in both;
       }
+    }
 
-      &:hover::before {
-        clip-path: circle(100%);
-      }
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-image: url(../assets/images/hero-background.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      animation: fadeIn 2s ease-in both;
     }
   }
 
-  & #title {
-    margin-inline: auto;
-    max-width: 41rem;
+  #subtitle {
+    margin: 6rem 7.5rem 5rem;
+    position: relative;
 
-    & > p {
-      margin-top: 2rem;
+    #text {
+      padding: 7.125rem 2rem 9.875rem;
+      font: var(--subtitle);
+      color: #e2e7e980;
     }
 
-    animation: fadeIn 4s ease-in;
-  }
+    & img[src*="book"] {
+      position: absolute;
+      top: 8.26px;
+      left: 45%;
+    }
 
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-image: url(../assets/images/hero-background.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: fadeIn 4s ease-in;
+    & img[src*="ouija"] {
+      position: absolute;
+      bottom: 71.96px;
+      left: 33.96px;
+    }
+
+    & img[src*="ball"] {
+      position: absolute;
+      bottom: 76.14px;
+      right: 1.86px;
+    }
+
+    & img {
+      transform: scale(0);
+      opacity: 0;
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    &:hover {
+      #text {
+        span:nth-child(1) {
+          animation: 0.5s changeColorSpan forwards;
+          strong {
+            animation: 0.5s changeColorStrong forwards;
+          }
+        }
+
+        span:nth-child(2) {
+          animation: 0.5s changeColorSpan 0.5s forwards;
+          strong {
+            animation: 0.5s changeColorStrong 0.5s forwards;
+          }
+        }
+
+        span:nth-child(3) {
+          animation: 0.5s changeColorSpan 1s forwards;
+
+          strong {
+            animation: 0.5s changeColorStrong 1s forwards;
+          }
+        }
+      }
+
+      img:nth-child(1) {
+        transform: scale(1);
+        opacity: 1;
+        transition-delay: 0s;
+      }
+
+      img:nth-child(2) {
+        transform: scale(1);
+        opacity: 1;
+        transition-delay: 0.5s;
+      }
+
+      img:nth-child(3) {
+        transform: scale(1);
+        opacity: 1;
+        transition-delay: 1s;
+      }
+    }
   }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
   to {
     opacity: 1;
+  }
+}
+
+@keyframes changeColorSpan {
+  from {
+    color: #e2e7e980;
+  }
+  to {
+    color: var(--text-title);
+  }
+}
+
+@keyframes changeColorStrong {
+  to {
+    color: var(--blue-light);
   }
 }
