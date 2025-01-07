@@ -1,0 +1,187 @@
+#kit h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  margin-top: 14.6875rem;
+  margin-bottom: 0.3125rem;
+}
+
+#kit h2 img {
+  width: 32px;
+  height: 32px;
+}
+
+#kit p {
+  margin-bottom: 5.5rem;
+}
+
+#kit span {
+  font: var(--body-md);
+  color: var(--text-body);
+}
+
+#kit .book-kit {
+  padding-block: 8.375rem 10.5625rem;
+  position: relative;
+
+  img[src*="book"] {
+    display: block;
+    margin-inline: auto;
+    height: 38.5625rem;
+  }
+
+  img[src*="pin"] {
+    height: 15.875rem;
+    width: 13.875rem;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: -1;
+    animation: showPin 1s forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+
+  img[src*="purple"] {
+    height: 33.5rem;
+    width: 10.75rem;
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    z-index: -1;
+    animation: showBookmarkPurple 1s forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+
+  img[src*="yellow"] {
+    height: 33.5rem;
+    width: 10.75rem;
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    z-index: -1;
+    animation: showBookmarkYellow 1s forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+
+  img[src*="arrow-1"] {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: -2;
+    animation: showFirstArrow 1s forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+
+  img[src*="arrow-2"] {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: -1;
+    animation: showSecondArrow 1s forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+
+  img[src*="arrow-3"] {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: -2;
+    animation: showThirdArrow 1s forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+
+  /* broche exclusivo */
+  span:nth-of-type(1) {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: -1;
+    animation: showFirstText 1s forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+
+  /* capa dura */
+  span:nth-of-type(2) {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: -1;
+    animation: showSecondText 1s forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+
+  /* marca páginas */
+  span:nth-of-type(3) {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: -2;
+    animation: showThirdText 1s forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+}
+
+@keyframes showPin {
+  to {
+    transform: rotate(-8deg) translate(-190%, 120%);
+  }
+}
+
+@keyframes showBookmarkPurple {
+  to {
+    transform: rotate(20deg) translate(175%, 0%);
+  }
+}
+
+@keyframes showBookmarkYellow {
+  to {
+    transform: rotate(12deg) translate(100%, -5%);
+  }
+}
+
+@keyframes showFirstArrow {
+  to {
+    transform: translate(-390%, 130%);
+  }
+}
+
+@keyframes showSecondArrow {
+  to {
+    transform: translate(-210%, -970%);
+  }
+}
+
+@keyframes showThirdArrow {
+  to {
+    transform: translate(160%, 230%);
+  }
+}
+
+@keyframes showFirstText {
+  to {
+    transform: translate(-340%, 100%);
+  }
+}
+
+@keyframes showSecondText {
+  to {
+    transform: translate(-310%, -1650%);
+  }
+}
+
+@keyframes showThirdText {
+  to {
+    transform: translate(110%, 1700%);
+  }
+}

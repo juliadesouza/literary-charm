@@ -48,6 +48,12 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font: var(--title-sm);
+  color: var(--text-title);
+  text-align: center;
+}
+
 p {
   font: var(--body-lg);
   color: var(--text-body);

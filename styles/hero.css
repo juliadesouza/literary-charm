@@ -89,11 +89,12 @@
 
     #text {
       padding: 7.125rem 2rem 9.875rem;
+      text-align: center;
       font: var(--subtitle);
       color: #e2e7e980;
     }
 
-    & img[src*="book"] {
+    & img[src*="spellbook"] {
       position: absolute;
       top: 8.26px;
       left: 45%;
@@ -112,6 +113,8 @@
     }
 
     & img {
+      width: 5rem;
+      height: 5rem;
       transform: scale(0);
       opacity: 0;
       transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
