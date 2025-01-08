@@ -1,0 +1,109 @@
+#pricing {
+  padding-block: 10.25rem 18.875rem;
+}
+
+#pricing h2 {
+  margin-bottom: 3.5rem;
+}
+
+#pricing .cards {
+  padding-block: 5.125rem 6.75rem;
+
+  .card {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4.375rem;
+    padding: 2rem 2rem 1.75rem;
+    border-radius: 1.5rem;
+    background-color: var(--shape-hover);
+    width: fit-content;
+    position: relative;
+  }
+
+  .card-tag {
+    position: absolute;
+    top: 23px;
+    right: 24px;
+    font: var(--tag);
+    color: var(--text-body);
+    background-color: var(--shape-stroke);
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+  }
+
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .plan-type {
+      font: var(--title-xs);
+      color: var(--blue-light);
+
+      &.purple {
+        color: var(--pink-light);
+      }
+    }
+
+    .plan-price {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      span:nth-child(1) {
+        font: var(--title-md);
+        color: var(--text-title);
+      }
+
+      span:nth-child(2) {
+        font: var(--body-sm);
+        color: var(--text-label);
+      }
+    }
+  }
+
+  .card-details {
+    .items {
+      font: var(--body-xs);
+      color: var(--text-body);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      li {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      li::before {
+        content: "";
+        display: inline-block;
+        background: no-repeat center/cover url(../assets/icons/star-blue.svg);
+        width: 0.875rem;
+        height: 0.875rem;
+      }
+
+      &.purple li::before {
+        background: no-repeat center/cover url(../assets/icons/star.svg);
+      }
+    }
+
+    .button {
+      font: var(--button);
+      color: var(--text-title);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background-color: var(--blue-dark);
+      text-align: center;
+      margin-top: 1.5rem;
+
+      &.purple {
+        background-color: var(--pink-dark);
+      }
+    }
+  }
+}
