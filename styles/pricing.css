@@ -7,18 +7,29 @@
 }
 
 #pricing .cards {
+  position: relative;
   padding-block: 5.125rem 6.75rem;
 
   .card {
     margin-inline: auto;
     display: flex;
     flex-direction: column;
-    gap: 4.375rem;
+    justify-content: space-between;
     padding: 2rem 2rem 1.75rem;
     border-radius: 1.5rem;
-    background-color: var(--shape-hover);
-    width: fit-content;
+    background-color: var(--shape-stroke);
+    width: 22rem;
+    height: 28rem;
     position: relative;
+  }
+
+  .card:not(.fixed) {
+    border: 1px solid var(--shape-stroke);
+    background-color: var(--shape-hover);
+    position: absolute;
+    top: 5.125rem;
+    left: calc(50% - 11rem);
+    z-index: -1;
   }
 
   .card-tag {
@@ -105,5 +116,29 @@
         background-color: var(--pink-dark);
       }
     }
+  }
+
+  .card:nth-child(1) {
+    animation: moveCardLeft 2s forwards;
+    animation-timeline: view();
+    animation-range: 10vh 60vh;
+  }
+
+  .card:nth-child(3) {
+    animation: moveCardRight 2s forwards;
+    animation-timeline: view();
+    animation-range: 10vh 60vh;
+  }
+}
+
+@keyframes moveCardLeft {
+  to {
+    transform: rotate(-8deg) translate(-105%, 5%);
+  }
+}
+
+@keyframes moveCardRight {
+  to {
+    transform: rotate(8deg) translate(105%, 5%);
   }
 }

@@ -25,6 +25,8 @@
 #kit .book-kit {
   padding-block: 8.375rem 10.5625rem;
   position: relative;
+  width: 100%;
+  height: 100%;
 
   img[src*="book"] {
     display: block;
@@ -48,7 +50,7 @@
     height: 33.5rem;
     width: 10.75rem;
     position: absolute;
-    bottom: 35%;
+    bottom: 20%;
     left: 50%;
     z-index: -1;
     animation: showBookmarkPurple 1s forwards;
@@ -60,7 +62,7 @@
     height: 33.5rem;
     width: 10.75rem;
     position: absolute;
-    bottom: 35%;
+    bottom: 20%;
     left: 50%;
     z-index: -1;
     animation: showBookmarkYellow 1s forwards;
@@ -140,13 +142,13 @@
 
 @keyframes showBookmarkPurple {
   to {
-    transform: rotate(20deg) translate(175%, 0%);
+    transform: rotate(20deg) translate(145%, -25%);
   }
 }
 
 @keyframes showBookmarkYellow {
   to {
-    transform: rotate(12deg) translate(100%, -5%);
+    transform: rotate(12deg) translate(80%, -35%);
   }
 }
 
