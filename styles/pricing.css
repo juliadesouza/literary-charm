@@ -17,19 +17,50 @@
     justify-content: space-between;
     padding: 2rem 2rem 1.75rem;
     border-radius: 1.5rem;
-    background-color: var(--shape-stroke);
+    border: 1px solid var(--shape-stroke);
+    background-color: var(--shape-base);
     width: 22rem;
     height: 28rem;
     position: relative;
   }
 
   .card:not(.fixed) {
-    border: 1px solid var(--shape-stroke);
-    background-color: var(--shape-hover);
     position: absolute;
     top: 5.125rem;
     left: calc(50% - 11rem);
     z-index: -1;
+  }
+
+  .card.fixed {
+    img:nth-child(1) {
+      width: 2.8125rem;
+      height: 3.125rem;
+      position: absolute;
+      top: -3.125rem;
+    }
+
+    img:nth-child(2) {
+      width: 2rem;
+      height: 3rem;
+      position: absolute;
+      top: -2rem;
+      left: -3rem;
+      animation: fadeOutInRight 2s forwards;
+      animation-timeline: view();
+      animation-range: 20vh 60vh;
+    }
+
+    img:nth-child(3) {
+      width: 3.8rem;
+      height: 2rem;
+      position: absolute;
+      right: -3rem;
+      bottom: -2rem;
+      animation: fadeOutInLeft 2s forwards;
+      animation-timeline: view();
+      animation-range: 10vh 30vh;
+      z-index: -1;
+    }
   }
 
   .card-tag {
@@ -140,5 +171,27 @@
 @keyframes moveCardRight {
   to {
     transform: rotate(8deg) translate(105%, 5%);
+  }
+}
+
+@keyframes fadeOutInRight {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-24rem, 6rem);
+  }
+}
+
+@keyframes fadeOutInLeft {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(20rem, 6rem);
   }
 }
