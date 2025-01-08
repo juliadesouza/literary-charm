@@ -59,3 +59,8 @@ p {
   color: var(--text-body);
   text-align: center;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
