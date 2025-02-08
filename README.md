@@ -29,7 +29,7 @@ This project was developed with the aim of practicing advanced animation concept
 
 ---
 
-## 🇧🇷 Português
+# 🇧🇷 Português
 
 ## Clube de Assinatura de Livros
 
